@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'guard-rspec'
-gem 'reek'
-gem 'rspec'
-gem 'rubocop'
+group :test, :development do
+  gem 'rspec'
+end
+
+group :development do
+  gem 'guard-rspec'
+  gem 'reek'
+  gem 'rubocop'
+end
