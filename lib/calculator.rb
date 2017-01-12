@@ -6,7 +6,7 @@ class StringCalculator
   end
 
   def add
-    string.split(',')
+    string.split(/[,\n]/)
           .map(&:to_f)
           .reduce(0, &:+)
   end
