@@ -1,6 +1,6 @@
-describe Calculator do
+describe StringCalculator do
   describe '#add' do
-    let(:calculator) { Calculator.new }
+    let(:calculator) { StringCalculator.new }
     it 'should return 0 for empty string' do
       expect(calculator.add('')).to eq 0
     end
