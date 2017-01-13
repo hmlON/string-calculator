@@ -19,5 +19,9 @@ describe StringCalculator do
     it 'sould return sum of numbers with \n delimiter' do
       expect(StringCalculator.new("1\n3,17").add).to eq 21
     end
+
+    it 'sould return sum of numbers with \n delimiter' do
+      expect(StringCalculator.new("//;\n1;2").add).to eq 3
+    end
   end
 end

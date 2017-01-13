@@ -6,7 +6,12 @@ class StringCalculator
   end
 
   def add
-    string.split(/[,\n]/)
+    dilimiters = ["\n", ',']
+    if string[0..1] == '//'
+      dilimiters.concat(string[/\/\/(?<dilimiters>.)\n/, 'dilimiters'].split(''))
+    end
+    dilimiters_patter = Regexp.new('[' + dilimiters.join('') + ']')
+    string.split(dilimiters_patter)
           .map(&:to_f)
           .reduce(0, &:+)
   end
